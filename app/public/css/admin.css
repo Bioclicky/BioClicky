@@ -1,0 +1,108 @@
+/* ==========================================================================
+   PAINEL ADMINISTRATIVO E LOGIN DE ADMIN (DASHBOARD)
+   ========================================================================== */
+
+.admin-login-container {
+    background-color: #0b1117; /* Fundo escuro total */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-login-container form {
+    background-color: #161e2a; /* Cor interna do Card */
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 440px; 
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.admin-login-container h1 { margin-bottom: 15px; font-size: 24px; }
+.admin-login-container h2 { font-size: 22px; margin-bottom: 5px; }
+.admin-login-container p { color: #8892b0; font-size: 14px; margin-bottom: 25px; }
+
+.admin-badge {
+    background: #1a3630;
+    color: #48bb78;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Campos de entrada do Admin */
+.admin-input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.admin-input-group label {
+    display: block;
+    color: #ccd6f6;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.admin-input-field {
+    width: 100%;
+    background-color: #0b1117;
+    border: 1px solid #233549;
+    padding: 14px 16px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.admin-input-field:focus {
+    border-color: #48bb78;
+}
+
+.admin-submit-btn {
+    width: 100%;
+    background-color: #48bb78;
+    color: #0b1117;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.admin-submit-btn:hover {
+    background-color: #38a169;
+}
+
+/* Estrutura do Painel Interno do Administrador */
+.admin-dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f7fafc;
+}
+
+.admin-sidebar {
+    width: 260px;
+    background-color: #161e2a;
+    color: white;
+    padding: 30px 20px;
+}
+
+.admin-main-content {
+    flex: 1;
+    padding: 40px;
+}

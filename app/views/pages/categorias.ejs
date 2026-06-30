@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias - BioClicky</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="internal-body">
+
+    <header class="internal-nav">
+        <span class="home-logo">
+            <ion-icon name="medical" class="brand-green"></ion-icon>
+            <h1>BioClicky</h1>
+        </span>
+        <nav class="internal-menu">
+            <a href="/remedios">Remédios</a>
+            <a href="/categorias" class="active">Categorias</a>
+            <a href="/farmacias-perto">Farmácias Perto</a>
+            <a href="/sobre">Quem Somos</a>
+            <a href="/sair" class="logout-link">Sair</a>
+        </nav>
+    </header>
+
+    <main class="internal-main">
+        <section class="category-section">
+            <header class="container-header">
+                <h2>Navegar por Categorias</h2>
+                <p>Selecione uma especialidade farmacêutica para filtrar os medicamentos de uso contínuo</p>
+            </header>
+
+            <nav class="category-list-grid">
+                <% categorias.forEach(cat => { %>
+                    <a href="/remedios?cat=<%= cat %>" class="category-item-card">
+                        <span class="category-icon-box">
+                            <ion-icon name="folder-open-outline"></ion-icon>
+                        </span>
+                        <h3><%= cat %></h3>
+                        <p>Ver medicamentos desta classe</p>
+                    </a>
+                <% }) %>
+            </nav>
+        </section>
+    </main>
+
+</body>
+</html>
+
+teste 01

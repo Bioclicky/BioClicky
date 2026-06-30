@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicamentos - BioClicky</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="internal-body">
+
+    <header class="internal-nav">
+        <span class="home-logo">
+            <ion-icon name="medical" class="brand-green"></ion-icon>
+            <h1>BioClicky</h1>
+        </span>
+        <nav class="internal-menu">
+            <a href="/remedios" class="active">Remédios</a>
+            <a href="/categorias">Categorias</a>
+            <a href="/farmacias-perto">Farmácias Perto</a>
+            <a href="/sobre">Quem Somos</a>
+            <a href="/sair" class="logout-link">Sair (<%= usuario %>)</a>
+        </nav>
+    </header>
+
+    <main class="internal-main">
+        <section class="search-section">
+            <h2>Buscar Medicamentos</h2>
+            <p>Digite o nome do produto ou o princípio ativo para consultar as ofertas em tempo real</p>
+            <form class="search-bar-home" action="/remedios" method="GET">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" name="busca" placeholder="Ex: Paracetamol, Amoxicilina...">
+                <button type="submit">Pesquisar</button>
+            </form>
+        </section>
+
+        <section class="remedios-container">
+            <header class="container-header">
+                <h3>Medicamentos Encontrados</h3>
+                <p>Exibindo valores mapeados nas redes integradas da sua região</p>
+            </header>
+            
+            <section class="remedios-grid">
+                <% remedios.forEach(item => { %>
+                    <article class="remedio-card">
+                        <header class="card-top">
+                            <span class="pill-icon-wrapper">
+                                <ion-icon name="pill" class="brand-green"></ion-icon>
+                            </span>
+                            <section class="title-wrapper">
+                                <h4><%= item.nome %></h4>
+                                <small>Laboratório: <%= item.laboratorio %></small>
+                            </section>
+                        </header>
+                        
+                        <section class="card-mid">
+                            <span class="price-label">Menor preço</span>
+                            <p class="remedio-price"><%= item.preco %></p>
+                        </section>
+                        
+                        <footer class="card-footer">
+                            <ion-icon name="business-outline"></ion-icon>
+                            <p>Disponível em: <strong><%= item.farmacia %></strong></p>
+                        </footer>
+                    </article>
+                <% }) %>
+            </section>
+        </section>
+    </main>
+
+</body>
+</html>

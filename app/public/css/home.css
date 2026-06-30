@@ -1,0 +1,988 @@
+/* ===================================== IMPORTAÇÃO DA FONTE ===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600&display=swap');
+
+/* ===================================== HEADER | CABEÇALHO ===================================== */ 
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.cabecalho  {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 40px;
+    background:#fff;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.logo  {
+    text-decoration:none;
+    font-size:2rem;
+    color:#111;
+}
+
+.logo span  {
+    color:#31c779;
+}
+
+.logo img  {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.cruz  {
+    margin-right:8px;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.menu li{
+    list-style: none;
+}
+
+.menu a{
+    position: relative;
+    text-decoration: none;
+    color: #111;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color .3s ease;
+}
+
+.menu a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 3px;
+
+    background: #31c779;
+    border-radius: 20px;
+
+    transition: width .3s ease;
+}
+
+.menu a:hover{
+    color: #31c779;
+}
+
+.menu a:hover::after{
+    width: 100%;
+}
+
+.menu a.ativo{
+    color:#31c779;
+}
+
+.indicador{
+    position:absolute;
+    bottom:-10px;
+    left:0;
+
+    width:0;
+    height:3px;
+
+    background:#31c779;
+    border-radius:20px;
+
+    transition:
+        left .4s cubic-bezier(.23,1,.32,1),
+        width .4s cubic-bezier(.23,1,.32,1);
+}
+
+/* .menu a.ativo::after {
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-12px;
+    width:100%;
+    height:3px;
+    background:#31c779;
+    border-radius:10px;
+} */
+
+.acoes  {
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.localizacao {
+    text-decoration:none;
+    color:#444;
+}
+
+.entrar {
+    padding:12px 24px;
+    border:1px solid #31c779;
+    background:#fff;
+    color:#31c779;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.entrar:hover {
+    background:#31c779;
+    color:#fff;
+}
+
+.localizacao,
+.entrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.localizacao ion-icon {
+    font-size: 22px;
+    color: #31c779;
+}
+
+.entrar ion-icon {
+    font-size: 22px;
+}
+
+.entrar {
+    padding: 12px 24px;
+    border: 1px solid #31c779;
+    background: #fff;
+    color: #31c779;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+/*=====================================  MAIN 1  | CORPO 1   ===================================== */ 
+
+.hero{
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 80px;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,.15);
+}
+
+.fundo-verde{
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-texto{
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+}
+
+.hero-texto h1{
+    font-size: 52px;
+    line-height: 1.1;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.hero-texto h1 span{
+    color: #4bca93;
+}
+
+.hero-texto p{
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.busca{
+    display: flex;
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+
+.busca input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 12px 0 0 12px;
+    background: #ececec;
+}
+
+.busca button{
+    border: none;
+    padding: 15px 30px;
+    border-radius: 0 12px 12px 0;
+    background: #4bca93;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hero-texto small{
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.hero-texto small a{
+    text-decoration: none;
+    color: #4bca93;
+    font-weight: 600;
+}
+
+.hero-imagens{
+    position: relative;
+    z-index: 2;
+    width: 550px;
+    height: 350px;
+}
+
+.frasco{
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 150px;
+}
+
+.caixa{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 260px;
+}
+
+.comprimidos{
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 280px;
+}
+
+/* ===================================== NOVAS ADIÇÕES (ESTILO DA IMAGEM) ===================================== */
+
+
+.busca input, 
+.busca button {
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 600;
+}
+
+
+.busca {
+    display: flex;
+    align-items: center;
+    background-color: #e2e2e2; 
+    border-radius: 50px;       
+    padding: 6px 6px 6px 20px; 
+    width: 100%;
+    max-width: 500px;        
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    margin-bottom: 20px;
+}
+
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 12px; 
+}
+
+
+.lupa-icon {
+    font-size: 1.3rem;
+    color: #1a1a1a; 
+    margin-right: 12px;        /* Espaçamento entre a lupa e o texto de digitação */
+    flex-shrink: 0;            /* Impede o ícone de amassar em telas menores */
+}
+
+
+.busca input {
+    flex: 1;                   /* Faz o input ocupar todo o espaço do meio */
+    background: none;
+    border: none;
+    outline: none;
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 600;          /* Alexandria SemiBold */
+    font-size: 1rem;
+    color: #333;
+    padding: 10px 0;
+}
+
+
+.busca input::placeholder {
+    color: #9e9e9e; 
+}
+
+/* Estilizando o botão original com o novo formato e a cor verde exata da foto */
+.busca button {
+    background-color: #4bca93; /* Verde idêntico ao da imagem */
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 50px;       
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 600;          /* Alexandria SemiBold */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+/* Efeito hover para o botão verde */
+.busca button:hover {
+    background-color: #4bca93;
+}
+
+/* ===================================== MAIN 2  | CORPO 2 ===================================== */
+
+.resultados{
+    padding:60px 80px;
+    background:#f8f8f8;
+}
+
+.topo-resultados{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topo-resultados h2{
+    font-size:28px;
+}
+
+.localizacao-topo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:#444;
+}
+
+.localizacao-topo ion-icon{
+    color:#4bca93;
+}
+
+.cards-farmacias{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.farmacia-card{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.farmacia-card img{
+    height:40px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.farmacia-card h3{
+    color:#4bca93;
+    margin-bottom:10px;
+}
+
+.farmacia-card p{
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+.farmacia-card button {
+    border: 1px solid #4bca93;
+    background: none;
+    color: #4bca93;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease; /* Deixa o efeito suave */
+}
+
+.farmacia-card button:hover {
+    background-color: #4bca93; /* Preenche o fundo com o verde */
+    color: #fff;               /* Muda o texto para branco */
+}
+
+.conteudo-inferior{
+
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+
+
+.passos{
+    display:flex;
+    gap:20px;
+    margin-top:20px;
+}
+
+.passo{
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    flex:1;
+    position:relative;
+}
+
+.passo span{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    width:28px;
+    height:28px;
+    background:#4bca93;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.lista-categorias{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.categoria{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    font-size:30px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.categoria span{
+    font-size:14px;
+    color:#222;
+}
+
+
+/* ==================== ESTILOS DA ÁREA LOGADA INTERNA ==================== */
+
+.internal-body {
+    background-color: #f4f7f6;
+    color: #2d3748;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.internal-nav {
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.internal-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.internal-menu a {
+    text-decoration: none;
+    color: #718096;
+    font-weight: 500;
+}
+
+.internal-menu a:hover, .internal-menu a.active {
+    color: #37c878;
+}
+
+.internal-menu a.logout-link {
+    color: #e53e3e;
+    font-size: 13px;
+}
+
+.internal-main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Grid de remédios */
+.remedios-grid, .category-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.remedio-card, .category-item-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+}
+
+.remedio-card h4 {
+    margin: 10px 0 5px 0;
+    font-size: 18px;
+}
+
+.remedio-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #37c878;
+    margin: 15px 0;
+}
+
+/* Tela Sobre Nós */
+.about-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.about-content h2 {
+    color: #1a202c;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================================================
+   ÁREA INTERNA DO USUÁRIO
+   ========================================================================== */
+
+   .internal-body {
+    background-color: #f7fafc;
+    color: #2d3748;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu de Navegação Logado */
+.internal-nav {
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.internal-menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.internal-menu a {
+    text-decoration: none;
+    color: #718096;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.internal-menu a:hover, .internal-menu a.active {
+    color: #37c878;
+}
+
+.internal-menu a.logout-link {
+    color: #e53e3e;
+    font-size: 14px;
+    border-left: 1px solid #e2e8f0;
+    padding-left: 15px;
+}
+
+.internal-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Área de Cabeçalhos dos Containers */
+.container-header {
+    margin-bottom: 30px;
+}
+
+.container-header h2, .container-header h3 {
+    font-size: 26px;
+    color: #1a202c;
+    margin: 0 0 5px 0;
+}
+
+.container-header p {
+    color: #718096;
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Imagem 2: Seção de Pesquisa Centralizada */
+.search-section {
+    text-align: center;
+    background: linear-gradient(135deg, #161e2a 0%, #0b1117 100%);
+    color: white;
+    padding: 50px 30px;
+    border-radius: 16px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.search-section h2 {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+}
+
+.search-section p {
+    color: #a0aec0;
+    margin: 0 0 30px 0;
+}
+
+/* Imagem 3: Grid de Medicamentos */
+.remedios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.remedio-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.remedio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
+
+.card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.pill-icon-wrapper {
+    background: rgba(55, 200, 120, 0.1);
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pill-icon-wrapper ion-icon {
+    font-size: 24px;
+}
+
+.title-wrapper h4 {
+    font-size: 18px;
+    color: #1a202c;
+    margin: 0 0 4px 0;
+}
+
+.title-wrapper small {
+    color: #718096;
+    font-size: 13px;
+}
+
+.card-mid {
+    margin-bottom: 20px;
+}
+
+.price-label {
+    font-size: 12px;
+    color: #a0aec0;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+}
+
+.remedio-price {
+    font-size: 32px;
+    font-weight: 800;
+    color: #37c878;
+    margin: 2px 0 0 0;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid #f7fafc;
+    padding-top: 15px;
+    color: #4a5568;
+}
+
+.card-footer ion-icon {
+    font-size: 18px;
+    color: #718096;
+}
+
+.card-footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Imagem 4: Grid de Categorias */
+.category-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.category-item-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.category-item-card:hover {
+    border-color: #37c878;
+    background: rgba(55, 200, 120, 0.02);
+    transform: translateY(-2px);
+}
+
+.category-icon-box {
+    width: 50px;
+    height: 50px;
+    background: #f7fafc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    color: #37c878;
+    transition: background 0.2s;
+}
+
+.category-item-card:hover .category-icon-box {
+    background: rgba(55, 200, 120, 0.1);
+}
+
+.category-icon-box ion-icon {
+    font-size: 24px;
+}
+
+.category-item-card h3 {
+    font-size: 18px;
+    margin: 0 0 6px 0;
+    color: #1a202c;
+}
+
+.category-item-card p {
+    font-size: 13px;
+    color: #a0aec0;
+    margin: 0;
+}
+
+
+
+
+.home-body {
+    background-color: #f7fafc;
+    color: #2d3748;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 1ª Imagem: Topo e Barra de Navegação */
+.home-navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    max-width: 100%;
+}
+
+.home-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.home-logo ion-icon.brand-green {
+    font-size: 32px;
+    color: #37c878;
+}
+
+.home-logo h1, .home-logo h2 {
+    font-size: 24px;
+    color: #1a202c;
+    margin: 0;
+}
+
+.home-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.home-nav-links a {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.home-nav-links a:hover, .home-nav-links a.active {
+    color: #37c878;
+}
+
+.home-nav-links .nav-btn-login {
+    padding: 8px 16px;
+    border: 1px solid #37c878;
+    border-radius: 6px;
+    color: #37c878;
+}
+
+.home-nav-links .nav-btn-login:hover {
+    background: rgba(55, 200, 120, 0.05);
+}
+
+.home-nav-links .nav-btn-register {
+    padding: 9px 18px;
+    background: #37c878;
+    color: white;
+    border-radius: 6px;
+}
+
+.home-nav-links .nav-btn-register:hover {
+    background: #2eb469;
+}
+
+/* Seção de Destaque (Hero) */
+.home-hero {
+    background: linear-gradient(135deg, #161e2a 0%, #0b1117 100%);
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.home-hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.home-hero p {
+    color: #a0aec0;
+    font-size: 18px;
+    margin-bottom: 35px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Barra de Busca Reajustada (Tag Form) */
+form.search-bar-home {
+    background: white;
+    padding: 6px 6px 6px 18px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+form.search-bar-home ion-icon {
+    font-size: 22px;
+    color: #a0aec0;
+    margin-right: 10px;
+}
+
+form.search-bar-home input {
+    border: none;
+    margin-bottom: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #2d3748;
+    flex-grow: 1;
+    outline: none;
+    background: transparent;
+}
+
+form.search-bar-home button {
+    background: #37c878;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+form.search-bar-home button:hover {
+    background: #2eb469;
+}
+
+/* 2ª Imagem: Meio - Parceiros */
+.home-partners-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
