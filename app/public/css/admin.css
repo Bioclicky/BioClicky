@@ -1,108 +1,287 @@
-/* ==========================================================================
-   PAINEL ADMINISTRATIVO E LOGIN DE ADMIN (DASHBOARD)
-   ========================================================================== */
+/* ===========================
+   RESET
+=========================== */
 
-.admin-login-container {
-    background-color: #0b1117; /* Fundo escuro total */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
 }
 
-.admin-login-container form {
-    background-color: #161e2a; /* Cor interna do Card */
-    padding: 40px;
-    border-radius: 15px;
-    width: 100%;
-    max-width: 440px; 
-    text-align: center;
-    color: white;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+body{
+    background:#060b16;
+    min-height:100vh;
 }
 
-.admin-login-container h1 { margin-bottom: 15px; font-size: 24px; }
-.admin-login-container h2 { font-size: 22px; margin-bottom: 5px; }
-.admin-login-container p { color: #8892b0; font-size: 14px; margin-bottom: 25px; }
+/* ===========================
+   LOGIN ADMIN
+=========================== */
 
-.admin-badge {
-    background: #1a3630;
-    color: #48bb78;
-    padding: 6px 14px;
-    border-radius: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+.admin-login-container{
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
 }
 
-/* Campos de entrada do Admin */
-.admin-input-group {
-    margin-bottom: 20px;
-    text-align: left;
+.admin-login-container form{
+
+    width:100%;
+    max-width:450px;
+
+    background:#151d2c;
+
+    border:1px solid #263349;
+
+    border-radius:24px;
+
+    padding:40px 35px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
 }
 
-.admin-input-group label {
-    display: block;
-    color: #ccd6f6;
-    font-size: 14px;
-    margin-bottom: 8px;
-    font-weight: 500;
+.admin-login-container header{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:25px;
+
 }
 
-.admin-input-field {
-    width: 100%;
-    background-color: #0b1117;
-    border: 1px solid #233549;
-    padding: 14px 16px;
-    border-radius: 8px;
-    color: white;
-    font-size: 15px;
-    outline: none;
-    transition: border-color 0.2s;
+.admin-login-container h1{
+
+    color:#fff;
+
+    font-size:42px;
+
+    font-weight:700;
+
 }
 
-.admin-input-field:focus {
-    border-color: #48bb78;
+.admin-badge{
+
+    width:max-content;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    background:#163d34;
+
+    color:#38d27a;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    font-size:15px;
+
+    margin-bottom:35px;
+
 }
 
-.admin-submit-btn {
-    width: 100%;
-    background-color: #48bb78;
-    color: #0b1117;
-    border: none;
-    padding: 14px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    margin-top: 10px;
+.admin-login-container h2{
+
+    text-align:center;
+
+    color:#fff;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
 }
 
-.admin-submit-btn:hover {
-    background-color: #38a169;
+.admin-login-container p{
+
+    text-align:center;
+
+    color:#8d97b3;
+
+    margin-bottom:35px;
+
 }
 
-/* Estrutura do Painel Interno do Administrador */
-.admin-dashboard-layout {
-    display: flex;
-    min-height: 100vh;
-    background-color: #f7fafc;
+.admin-login-container label{
+
+    display:block;
+
+    color:#d7e0ff;
+
+    margin-bottom:8px;
+
+    font-size:15px;
+
 }
 
-.admin-sidebar {
-    width: 260px;
-    background-color: #161e2a;
-    color: white;
-    padding: 30px 20px;
+.input-container{
+
+    position:relative;
+
+    margin-bottom:25px;
+
+    display:block;
+
 }
 
-.admin-main-content {
-    flex: 1;
-    padding: 40px;
+.input-container input{
+
+    width:100%;
+
+    height:58px;
+
+    border-radius:16px;
+
+    border:1px solid #36445d;
+
+    background:#222c3d;
+
+    color:#fff;
+
+    font-size:16px;
+
+    outline:none;
+
+    padding-left:50px;
+
+    padding-right:50px;
+
+}
+
+.input-container input::placeholder{
+
+    color:#73819e;
+
+}
+
+.input-container input:focus{
+
+    border:1px solid #38d27a;
+
+}
+
+.field-icon{
+
+    position:absolute;
+
+    left:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#6f7f9e;
+
+    font-size:20px;
+
+}
+
+.toggle-icon{
+
+    position:absolute;
+
+    right:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#6f7f9e;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+}
+
+.admin-login-container button{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:#37c977;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.admin-login-container button:hover{
+
+    background:#2eb06a;
+
+}
+
+.back-link{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:28px;
+
+    text-decoration:none;
+
+    color:#7d8aa8;
+
+    transition:.25s;
+
+}
+
+.back-link:hover{
+
+    color:#fff;
+
+}
+
+/* ===========================
+   DASHBOARD
+=========================== */
+
+.admin-dashboard-layout{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+.admin-sidebar{
+
+    width:260px;
+
+    background:#151d2c;
+
+}
+
+.admin-main-content{
+
+    flex:1;
+
+    padding:40px;
+
+    background:#f5f7fb;
+
 }

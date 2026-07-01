@@ -140,14 +140,25 @@ input{
 
 .password{
     position:relative;
-    display:block;
+    width:100%;
+    margin-bottom:20px;
+}
+
+.password input{
+    width:100%;
+    padding-right:50px;
+    margin-bottom:0;
 }
 
 .password ion-icon{
     position:absolute;
     right:15px;
-    top:12px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:22px;
     color:#777;
+    cursor:pointer;
+    line-height:1;
 }
 
 .erro{
@@ -240,17 +251,90 @@ button[type="submit"]{
     text-align:center;
 }
 
-.password{
-    position:relative;
-    display:block;
-}
+/* ===================================================================
+   RESPONSIVO MOBILE
+   =================================================================== */
 
-.password ion-icon{
-    position:absolute;
-    right:15px;
-    top:50%;
-    transform:translateY(-50%);
-    cursor:pointer;
-    font-size:22px;
-}
+@media (max-width: 768px){
 
+    main{
+        display:block;
+        min-height:100vh;
+        background:#fafafa;
+    }
+
+    /* Esconde lado verde */
+    .left{
+        display:none;
+    }
+
+    /* Form ocupa a tela */
+    .right{
+        width:100%;
+        min-height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:25px 18px;
+    }
+
+    form{
+        width:100%;
+        max-width:400px;
+    }
+
+    form h2{
+        font-size:34px;
+        text-align:center;
+    }
+
+    form p{
+        text-align:center;
+        font-size:15px;
+        margin-bottom:30px;
+    }
+
+    label{
+        font-size:14px;
+    }
+
+    input{
+        height:50px;
+        font-size:15px;
+        border-radius:12px;
+    }
+
+    .senha-top{
+        font-size:14px;
+    }
+
+    button[type="submit"]{
+        height:52px;
+        border-radius:12px;
+        font-size:16px;
+    }
+
+    .google{
+        height:48px;
+        font-size:14px;
+        border-radius:12px;
+    }
+
+    .google img{
+        width:18px;
+    }
+
+    .separator{
+        margin:20px 0;
+    }
+
+    .register{
+        margin-top:25px;
+        font-size:15px;
+    }
+
+    .password ion-icon{
+        font-size:20px;
+    }
+
+}

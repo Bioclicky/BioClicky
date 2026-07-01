@@ -9,6 +9,7 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   
 </head>
 <body>
 
@@ -62,21 +63,22 @@
                 </a>
             </section>
 
-            <label class="password">
+       
 
-                <input
-                    type="password"
-                    name="senha"
-                    placeholder="••••••••"
-                    required
-                >
+<label class="password">
 
-                <ion-icon
-                    id="toggleSenha"
-                    name="eye-outline">
-                </ion-icon>
+    <input
+        id="senha"
+        type="password"
+        name="senha"
+        placeholder="Mínimo 6 caracteres"
+        required
+    >
 
-            </label>
+    <ion-icon id="toggleSenha" name="eye-outline"></ion-icon>
+
+</label>
+            
 
             <button type="submit">
                 Entrar
@@ -105,29 +107,6 @@
     </section>
 
 </main>
-
-<script>
-
-const olho = document.getElementById("toggleSenha");
-const senha = document.querySelector('input[name="senha"]');
-
-olho.addEventListener("click", () => {
-
-    if (senha.type === "password") {
-
-        senha.type = "text";
-        olho.setAttribute("name", "eye-off-outline");
-
-    } else {
-
-        senha.type = "password";
-        olho.setAttribute("name", "eye-outline");
-
-    }
-
-});
-
-</script>
-
+<script> src="/js/login.js"</script>
 </body>
 </html>

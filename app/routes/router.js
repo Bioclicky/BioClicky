@@ -4,6 +4,13 @@ const db = require("../routes/database");
 
 const router = express.Router();
 
+// Disponibiliza informações do usuário para todas as páginas
+router.use((req, res, next) => {
+    res.locals.logado = !!req.session.usuarioId;
+    res.locals.usuario = req.session.usuarioNome || null;
+    next();
+});
+
 // 🔒 MIDDLEWARE DE SEGURANÇA
 function requerLogin(req, res, next) {
     if (req.session && req.session.usuarioId) {
@@ -23,13 +30,27 @@ router.get("/", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-    res.render("pages/login", { erro: null });
+
+    if (req.session.usuarioId) {
+        return res.redirect("/");
+    }
+
+    res.render("pages/login", {
+        erro: null
+    });
+
 });
 
 router.get("/cadastro", (req, res) => {
+
+    if (req.session.usuarioId) {
+        return res.redirect("/");
+    }
+
     res.render("pages/cadastro", {
         erro: null
     });
+
 });
 
 router.get("/senha", (req, res) => {
@@ -110,11 +131,13 @@ router.post("/cadastro", async (req, res) => {
             [nome, email, senhaCriptografada],
             (err, results) => {
 
-                if (err) {
-                    return res.render("pages/cadastro", {
-                        erro: "Este e-mail já está cadastrado."
-                    });
-                }
+if (err) {
+    console.log(err);
+
+    return res.render("pages/cadastro", {
+        erro: err.sqlMessage || err.message
+    });
+}
 
                 req.session.usuarioId = results.insertId;
                 req.session.usuarioNome = nome;

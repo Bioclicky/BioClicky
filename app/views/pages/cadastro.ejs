@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/login.css">
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    
 </head>
 <body>
 
@@ -62,21 +63,21 @@
                 required
             >
 
-            <label>Senha</label>
+           <label for="senha">Senha</label>
 
-            <label class="password">
+<label class="password">
 
-                <input
-                    type="password"
-                    name="senha"
-                    placeholder="Mínimo 6 caracteres"
-                    required
-                >
+    <input
+        id="senha"
+        type="password"
+        name="senha"
+        placeholder="Mínimo 6 caracteres"
+        required
+    >
 
-                <ion-icon name="eye-outline"></ion-icon>
+    <ion-icon id="toggleSenha" name="eye-outline"></ion-icon>
 
-            </label>
-
+</label>
             <label>Confirmar senha</label>
 
             <input
@@ -116,7 +117,7 @@
     </section>
 
 </main>
-
+<script> src="/js/login.js"</script>
 </body>
 </html>
 

@@ -142,6 +142,35 @@
     color:#fff;
 }
 
+.perfil-btn{
+    width:48px !important;
+    height:48px !important;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#eef4f3 !important;
+
+    border:none !important;
+    border-radius:50% !important;
+
+    cursor:pointer;
+
+    padding:0 !important;
+
+    transition:.2s;
+}
+
+.perfil-btn:hover{
+    background:#dde8e7 !important;
+}
+
+.perfil-btn ion-icon{
+    font-size:24px;
+    color:#222;
+}
+
 .localizacao,
 .entrar {
     display: flex;
@@ -168,6 +197,66 @@
     font-weight: 600;
 }
 
+.user-menu{
+    position: relative;
+}
+
+.user-btn{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background: transparent;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    transition:.25s;
+}
+
+.user-btn:hover{
+    background:#dce8e6;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:60px;
+    right:0;
+    width:220px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    overflow:hidden;
+    display:none;
+    z-index:999;
+}
+
+.dropdown-menu.active{
+    display:block;
+}
+
+.dropdown-header{
+    padding:14px 16px;
+    background:#eef4f3;
+}
+
+.dropdown-menu a{
+    display:block;
+    padding:14px 16px;
+    color:#333;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.dropdown-menu a:hover{
+    background:#f5f5f5;
+}
+
+.logout{
+    color:#ff3d00;
+    font-weight:bold;
+}
 
 /*=====================================  MAIN 1  | CORPO 1   ===================================== */ 
 
@@ -985,4 +1074,179 @@ form.search-bar-home button:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 20px;
+}
+
+/* =======================================================
+                        FARMÁCIAS
+======================================================= */
+
+.farmacias-container{
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.farmacias-titulo{
+    margin-bottom: 30px;
+}
+
+.farmacias-titulo h1{
+    font-size: 42px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.farmacias-titulo p{
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.farmacias-pesquisa{
+    position: relative;
+    width: 100%;
+    max-width: 470px;
+    margin-bottom: 40px;
+}
+
+.farmacias-pesquisa ion-icon{
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #9ca3af;
+}
+
+.farmacias-pesquisa input{
+    width: 100%;
+    height: 58px;
+    border: 1px solid #d9d9d9;
+    border-radius: 15px;
+    padding-left: 52px;
+    font-size: 16px;
+    outline: none;
+    transition: .3s;
+}
+
+.farmacias-pesquisa input:focus{
+    border-color: #43d28d;
+    box-shadow: 0 0 0 3px rgba(67,210,141,.15);
+}
+
+.farmacias-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(370px,1fr));
+    gap: 28px;
+}
+
+.farmacia-card{
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 22px;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    transition: .25s;
+}
+
+.farmacia-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.farmacia-icone{
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    background: #eefbf5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.farmacia-icone ion-icon{
+    font-size: 34px;
+    color: #43d28d;
+}
+
+.farmacia-info{
+    width: 100%;
+}
+
+.farmacia-topo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.farmacia-topo h2{
+    font-size: 29px;
+    color: #111827;
+}
+
+.verificado{
+    color: #43d28d;
+    font-size: 22px;
+}
+
+.nota{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 18px;
+    color: #111827;
+    font-weight: 600;
+}
+
+.nota ion-icon{
+    color: #f7b500;
+}
+
+.farmacia-info p{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: #6b7280;
+    font-size: 16px;
+}
+
+.farmacia-info p ion-icon{
+    color: #43d28d;
+    font-size: 18px;
+}
+
+.selo{
+    display: inline-block;
+    margin-top: 8px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: #eafaf2;
+    color: #32b870;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #c8f0db;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+    .farmacias-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+    .farmacia-card{
+        flex-direction:column;
+    }
+
+    .farmacia-topo{
+        flex-wrap:wrap;
+    }
+
+    .farmacias-titulo h1{
+        font-size:32px;
+    }
 }
